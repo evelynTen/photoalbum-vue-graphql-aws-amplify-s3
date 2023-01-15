@@ -1,10 +1,29 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <!-- <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> -->
+    <Nav />
   </nav>
   <router-view/>
 </template>
+
+<script>
+import Nav from '@/components/NavName.vue';
+import { mapActions } from 'vuex';
+
+export default {
+  mounted(){
+    this.authAction();
+  },
+  components: {
+    Nav,
+  },
+  methods: {
+    ...mapActions("auth", ["authAction"])
+  }
+}
+
+</script>
 
 <style lang="scss">
 #app {
