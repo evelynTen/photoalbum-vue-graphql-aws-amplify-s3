@@ -29,5 +29,11 @@ pipeline {
       }
     }
 
+    stage('Push') {
+      steps {
+        sh 'docker push yuanningliu/dockerize-vue-aws-amplify:latest'
+      }
+    }
+
   }
 }
