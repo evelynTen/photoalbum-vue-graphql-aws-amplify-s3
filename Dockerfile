@@ -1,12 +1,16 @@
 FROM node:lts-alpine
-WORKDIR /usr/src/app
+
+# make the 'app' folder the current working directory
+WORKDIR /app
+
+# copy both 'package.json' and 'package-lock.json' (if available)
 COPY package*.json ./
-RUN ls -l
+
+# install project dependencies
 RUN npm install
-COPY . /usr/src/app/
-RUN ls -l
-RUN npm run build
-COPY nodeServer.js dist/nodeServer.js
-WORKDIR /usr/src/app/dist
-EXPOSE 8080
-CMD [ "node", "nodeServer.js" ]
+
+# copy project files and folders to the current working directory (i.e. 'app' folder)
+COPY . .
+
+EXPOSE 8081
+CMD [ "npm", "run", "serve"]
