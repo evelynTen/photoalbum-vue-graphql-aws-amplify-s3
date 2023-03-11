@@ -15,7 +15,17 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -t yuanningliu/devops-vue-aws-amplify .'
+        sh 'docker build -t yuanningliu/dockerize-vue-aws-amplify .'
+      }
+    }
+
+    stage('Log into Dockerhub') {
+      environment {
+        DOCKERHUB_USER = 'yuanningliu'
+        DOCKERHUB_PASSWORD = 'Dockerhub@1216'
+      }
+      steps {
+        sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD'
       }
     }
 
