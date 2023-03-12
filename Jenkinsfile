@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -t yuanningliu/dockerize-vue-aws-amplify .'
+        sh 'docker build -t yuanningliu/devops-vue-aws-amplify .'
       }
     }
 
@@ -31,7 +31,7 @@ pipeline {
 
     stage('Push') {
       steps {
-        sh 'docker push yuanningliu/dockerize-vue-aws-amplify:latest'
+        sh 'docker push yuanningliu/devops-vue-aws-amplify:latest'
       }
     }
 
