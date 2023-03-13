@@ -31,7 +31,7 @@ pipeline {
 
     stage('Push') {
       steps {
-        sh 'docker push yuanningliu/devops-vue-aws-amplify:latest'
+        sh 'docker push yuanningliu/devops-vue-aws-amplify:2.0.0'
       }
     }
 
