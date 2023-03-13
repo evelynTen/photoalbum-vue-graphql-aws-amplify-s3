@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -t yuanningliu/devops-vue-aws-amplify .'
+        sh 'docker build -t yuanningliu/devops-vue-aws-amplify:2.0.0 .'
       }
     }
 
